@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイ・ウェブサイト</title>
+    
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .count-display {
+            font-size: 2rem;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hello World!</h1>
+        <p>下のボタンを押してみてください。</p>
+        
+        <div id="counter" class="count-display">0</div>
+        <button id="btn">カウントアップ！</button>
+    </div>
+
+    <script>
+        // HTML要素を取得
+        const button = document.getElementById('btn');
+        const counterDisplay = document.getElementById('counter');
+
+        let count = 0;
+
+        // ボタンがクリックされた時の処理
+        button.addEventListener('click', () => {
+            count++;
+            counterDisplay.textContent = count;
+            
+            // ちょっとした演出: 10回ごとに色を変える
+            if (count % 10 === 0) {
+                counterDisplay.style.color = '#e74c3c';
+            } else {
+                counterDisplay.style.color = '#007bff';
+            }
+        });
+    </script>
+</body>
+</html>
