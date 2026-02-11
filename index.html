@@ -71,16 +71,17 @@
             count++;
             counterDisplay.textContent = count;
             
-            // ちょっとした演出: 10回ごとに色を変える
-            if (count % 10 === 0) {
-                counterDisplay.style.color = '#e74c3c';
-            } else {
-                counterDisplay.style.color = '#007bff';
-            }
-            // 文字のサイズをカウントに合わせて大きくする
-         const currentSize = 2 + (count * 0.2); // 基本2rem ＋ カウント×0.2rem
-         counterDisplay.style.fontSize = currentSize + 'rem';
-            
+     　 // 1. 色の変更（ランダムな色を生成）
+ 　　   const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    　　counterDisplay.style.color = randomColor;
+
+   　　 // 2. フォントサイズの変更（カウントアップに合わせて大きくする）
+  　　  // 基本サイズ 2rem に、カウント×0.5rem を足していく
+  　　  const newSize = 2 + (count * 0.5);
+  　　  counterDisplay.style.fontSize = newSize + 'rem';
+
+ 　　   // 3. おまけ：ボタンの色も文字色と同じにする
+　　    button.style.backgroundColor = randomColor;
         });
     </script>
 </body>
