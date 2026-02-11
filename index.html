@@ -77,6 +77,10 @@
             } else {
                 counterDisplay.style.color = '#007bff';
             }
+            // 文字のサイズをカウントに合わせて大きくする
+         const currentSize = 2 + (count * 0.2); // 基本2rem ＋ カウント×0.2rem
+         counterDisplay.style.fontSize = currentSize + 'rem';
+            
         });
     </script>
 </body>
